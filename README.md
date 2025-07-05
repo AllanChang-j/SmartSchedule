@@ -62,7 +62,8 @@ We conducted comparative experiments on three model configurations for task dura
   The MSE was 14.177, indicating a drop in performance. This may be due to an overly dense feature space or a low correlation between the DNN intermediate layer outputs and the prediction target.Due to time and technical constraints, we did not specifically validate these two hypotheses.
 
 - **DNN + RF model**: DNN_RF_MSE: 4.578   Combines DNN output with embeddings for final RF regression (final usage plan)
-  <img width="446" alt="截圖 2025-07-05 下午6 19 44" src="https://github.com/user-attachments/assets/93a76c4d-a681-402a-9947-a6a7557c16cd" />
+  <img width="419" alt="截圖 2025-07-05 下午6 38 02" src="https://github.com/user-attachments/assets/65a8f529-e767-4e31-b158-97fdacaf9b0b" />
+
 
   
 ### Urgency Prediction:
