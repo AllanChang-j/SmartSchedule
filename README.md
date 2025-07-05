@@ -51,23 +51,33 @@ SmartSchedule/
 ## Analysis
 We conducted comparative experiments on three model configurations for task duration and urgency prediction:
 
-### Duration Prediction:
-- **DNN-only model**: Fast convergence but unstable validation loss (overfitting)  
-  *(Insert image: Figure 3-1)*
-- **RF-only model**: Feature importance was scattered and less semantically meaningful  
-  *(Insert image: Figure 3-2)*
-- **DNN + RF model**: Combines DNN output with embeddings for final RF regression, achieving best performance  
-  *(Insert image: Figure 3-3)*
+### Duration Prediction Comparison:
+- **DNN-only model**: DNN_Only_MSE: 13.884   Fast convergence but unstable validation loss (overfitting)  
+  <img width="446" alt="截圖 2025-07-05 下午6 10 35" src="https://github.com/user-attachments/assets/871c8d2b-0e66-484d-bba4-dffec8250c1c" />
 
+- **RF-only model**: RF_Only_MSE: 10.757   Feature importance was scattered and less semantically meaningful  
+  <img width="446" alt="截圖 2025-07-05 下午6 11 19" src="https://github.com/user-attachments/assets/0bbe6e82-8d57-4fe4-9a47-287ce2a64136" />
+
+- **DNN + DNN pred + RF model**: Combines DNN output and mid train pred with embeddings for final RF regression
+  The MSE was 14.177, indicating a drop in performance. This may be due to an overly dense feature space or a low correlation between the DNN intermediate layer outputs and the prediction target.Due to time and technical constraints, we did not specifically validate these two hypotheses.
+
+- **DNN + RF model**: DNN_RF_MSE: 4.578   Combines DNN output with embeddings for final RF regression (final usage plan)
+  <img width="446" alt="截圖 2025-07-05 下午6 19 44" src="https://github.com/user-attachments/assets/93a76c4d-a681-402a-9947-a6a7557c16cd" />
+
+  
 ### Urgency Prediction:
-- **RF-only** model achieved best performance, MSE = 0.0649  
-  *(Insert image: Figure 3-4, 3-5, 3-6)*
+- **DNN-only model**: DNN_Only_MSE: 0.686   Fast convergence but unstable validation loss (overfitting)
+    <img width="448" alt="截圖 2025-07-05 下午6 33 01" src="https://github.com/user-attachments/assets/5aceab1b-af49-4b94-affb-09daaaa1c292" />
+
+- **RF-only** RF_Only_MSE: 0.0649   model achieved best performance (final usage plan)
+  <img width="448" alt="截圖 2025-07-05 下午6 34 40" src="https://github.com/user-attachments/assets/c03f2202-ebb3-4ba8-9ab0-3faaa7791c5b" />
 
 ## Results
 Final system configuration:
-- **Duration prediction**: DNN + RF hybrid model (MSE = 10.62)
+- **Duration prediction**: DNN + RF hybrid model (MSE = 4.578)
 - **Urgency prediction**: RF-only model (MSE = 0.0649)
 - **Priority scoring**: Weighted formula using predicted duration, urgency, and remaining time
+<img width="560" alt="截圖 2025-07-05 下午6 36 46" src="https://github.com/user-attachments/assets/e8c55020-1d90-48e1-be86-0bfba67cd330" />
 
 Users interact with a Gradio-based UI to plan weekly schedules, exportable as `.ics` files to sync with Google Calendar.  
 The system balances accuracy and usability, making it suitable for students and freelancers managing busy schedules.
