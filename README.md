@@ -58,7 +58,7 @@ We conducted comparative experiments on three model configurations for task dura
 - **RF-only model**: RF_Only_MSE: 10.757   Feature importance was scattered and less semantically meaningful  
   <img width="446" alt="截圖 2025-07-05 下午6 11 19" src="https://github.com/user-attachments/assets/0bbe6e82-8d57-4fe4-9a47-287ce2a64136" />
 
-- **DNN + DNN pred + RF model**: Combines DNN output and mid train pred with embeddings for final RF regression
+- **DNN + DNN pred + RF model**: Combines DNN output and mid train pred with embeddings for final RF regression.
   The MSE was 14.177, indicating a drop in performance. This may be due to an overly dense feature space or a low correlation between the DNN intermediate layer outputs and the prediction target.Due to time and technical constraints, we did not specifically validate these two hypotheses.
 
 - **DNN + RF model**: DNN_RF_MSE: 4.578   Combines DNN output with embeddings for final RF regression (final usage plan)
