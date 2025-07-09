@@ -82,3 +82,15 @@ Final system configuration:
 
 Users interact with a Gradio-based UI to plan weekly schedules, exportable as `.ics` files to sync with Google Calendar.  
 The system balances accuracy and usability, making it suitable for students and freelancers managing busy schedules.
+
+## Contributors
+111zu1024 – 朗慕恆 (Konstantin Muheng Lackner)
+Served as a presenter for Innofest and contributed to report checking.
+112102031 – 陳以欣 (Chen Yi-Hsin)
+Focused on writing and structuring the report content.
+112zu1023 – 蕾蕾 (Sirinsara Wararuttanapisoot)
+Served as a presenter for Innofest and assisted with final report checking.
+113zu1042 – 黃彥誠 (Napat Rungrueangaree)
+Served as a presenter for Innofest and contributed to final report checking.
+113zu1049 – 張峻翔 (Chang Allan)
+Responsible for coding and drafting key sections of the report.
